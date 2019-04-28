@@ -1,0 +1,25 @@
+Refactorings
+Replace magic numbers with constants
+Replace repeated code with a function
+Change of variable name (as code needs comment to explain what it is for)
+Separate a complex expression into a local variable
+Replace loop with iterator (smell: Loop variable is an integer from 1 to something.)
+- iterator: traverse a collection and for a sequential access of items in a collection
+- loop: traverse items in a collection
+- if modifying collection: iterator
+- if using nested for loops: for each loop
+Replace hand-written code with library code
+Replace set of arrays with array of structures
+Replace constants with configuration file (yaml)
+Replace global variables with function arguments
+Merge neighbouring loops
+Break a large function into smaller units
+Separate code concepts into files or modules
+
+Object Refactorings
+Replace ad-hoc structure with user defined classes
+Replace function with a method
+If function is always called with the same kind of thing: Replace method arguments with class members
+If a variable is nearly always used in arguments to a class: Replace global variable with class and member
+Replace a global variable with class and member
+

@@ -1,0 +1,63 @@
+can_react:
+- substance1: A
+  substance2: antiA
+  result: True
+- substance1: antiA
+  substance2: A
+  result: True
+- substance1: A
+  substance2: B
+  result: False
+- substance1: A
+  substance2: antiB
+  result: False
+- substance1: A
+  substance2: antiA1
+  result: False
+
+antianti:
+- substance1: antiantiA
+  substance2: A
+- substance1: A
+  substance2: antiantiA
+
+update_shelves:
+- shelf1: ['A', 'B', 'antiC']
+  shelf2: ['antiB', 'A']
+  substance1: B
+  substance2_index: 0
+  shelf1_result: ['A', 'antiC']
+  shelf2_result: ['A']
+
+do_a_reaction:
+- lower: ['A', 'antiB', 'C', 'D', 'antiE']
+  upper: ['B', 'E', 'antiD', 'Onion', 'B']
+  shelf1_result: [['A', 'C', 'D', 'antiE']]
+  shelf2_result: [['E', 'antiD', 'Onion', 'B'], ['B', 'E', 'antiD', 'Onion']]
+
+run_full_experiment:
+- lower: ['A', 'B', 'C', 'D', 'E']
+  upper: []
+  shelf1_result: [['A', 'B', 'C', 'D', 'E']]
+  shelf2_result: [[]]
+  reactions: [0]
+- lower: []
+  upper: ['A', 'B', 'C', 'D', 'E']
+  shelf1_result: [[]]
+  shelf2_result: [['A', 'B', 'C', 'D', 'E']]
+  reactions: [0]
+- lower: ['antiA']
+  upper: ['A', 'B', 'C' ,'A' , 'C']
+  shelf1_result: [[]]
+  shelf2_result: [['B', 'C', 'A', 'C'], ['A', 'B', 'C', 'C']]
+  reactions: [1]
+- lower: ['A', 'B', 'C' ,'A' , 'C']
+  upper: ['antiA'] 
+  shelf1_result: [['B', 'C', 'A', 'C']]
+  shelf2_result: [[]]
+  reactions: [1]
+
+three_shelves:
+- lower: ['A', 'B', 'C', 'D', 'E']
+  middle: ['A', 'B', 'C', 'D', 'E']
+  upper: ['A', 'B', 'C', 'D', 'E']
